@@ -2,3 +2,45 @@
     margin: 0;
     box-sizing: border-box;
 }
+.centre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 240, 35);
+    border-radius: 10px;
+    height: 20em;
+    width: 25em;
+    box-shadow: 10px 10px 10px 2px grey;
+}
+
+.container > * {
+    height: 33%;
+}
+button {
+    margin: 10px;
+    font-size: 1em;
+    background: rgb(149, 248, 0);
+    border: none;
+    border-radius: 5px;
+    height: 2em;
+    width: 8em;
+    font-weight: bold;
+}
+input {
+    width: 32%;
+    margin: 0.5%;
+    color: white;
+    font-size: 1em;
+    padding: 5px 10px;
+    border: 4px;
+}
