@@ -13,9 +13,9 @@ function helper(time) {
 
 function getTime() {
     return [
-        parseInt(hours.value || 0),
-        parseInt(minutes.value || 0),
-        parseInt(seconds.value || 0)
+        parseFloat(hours.value || 0),
+        parseFloat(minutes.value || 0),
+        parseFloat(seconds.value || 0)
     ];
 }
 
