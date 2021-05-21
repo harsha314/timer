@@ -3,6 +3,9 @@ const minutes = document.querySelector('#minutes');
 const seconds = document.querySelector('#seconds');
 const start = document.querySelector('#start');
 const pause = document.querySelector('#pause');
+let audio = document.querySelector('#music');
+let userAudio = document.querySelector('#userAudio');
+let fileId = document.querySelector('#fileId');
 
 function helper(time) {
     let hours = Math.floor(time / 3600);
@@ -45,13 +48,16 @@ start.addEventListener('click', () => {
             } else {
                 resetFlg = 0;
                 pauseFlg = 0;
-                pause.innerHTML = 'Pause';
-                pause.disabled = true;
-                start.innerHTML = 'Start';
+                audio.autoplay = true;
+                audio.load();
+                audio.loop = true;
                 clearInterval(timerId);
             }
         }, 1000);
     } else {
+        audio.load();
+        audio.autoplay = false;
+        audio.loop = false;
         resetFlg = 1;
         start.innerHTML = 'Start';
         [hours.value, minutes.value, seconds.value] = [h, m, s];
@@ -66,5 +72,14 @@ pause.addEventListener('click', () => {
     } else {
         pause.innerHTML = 'Pause';
         pauseFlg = 0;
+    }
+});
+
+userAudio.addEventListener('change', () => {
+    if (fileId.innerHTML == 'Default') {
+        audio.src = URL.createObjectURL(userAudio.files[0]);
+        fileId.innerHTML = userAudio.files[0].name;
+    } else {
+        fileId.innerHTML;
     }
 });
