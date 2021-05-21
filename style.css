@@ -24,7 +24,7 @@ body {
 }
 
 .container > * {
-    height: 33%;
+    height: 25%;
 }
 button {
     margin: 10px;
@@ -33,14 +33,20 @@ button {
     border: none;
     border-radius: 5px;
     height: 2em;
-    width: 8em;
+    width: 25%;
     font-weight: bold;
 }
 input {
-    width: 32%;
-    margin: 0.5%;
-    color: blue;
+    width: 25%;
+    margin: calc(20% / 6);
     font-size: 1em;
     padding: 5px 10px;
-    border: 4px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 18em;
+    }
 }
